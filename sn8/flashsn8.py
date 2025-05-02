@@ -387,6 +387,8 @@ def main():
                     device_handle.detachKernelDriver(interface)
                 except usb1.USBErrorNotFound:
                     pass
+                except usb1.USBErrorNotSupported:
+                    pass
                 device_handle.claimInterface(interface)
         else:
             device_handle.setConfiguration(1)
